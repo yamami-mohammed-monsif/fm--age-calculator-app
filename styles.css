@@ -14,9 +14,9 @@
     --fs-inputs: 2rem;
     --fs-result: 3rem;
 
-    --fw-regular: 400i;
+    --fw-regular: 400;
     --fw-bold: 700;
-    --fw-xbold: 800i;
+    --fw-xbold: 900;
 }
 
 *,
@@ -29,6 +29,8 @@
 body {
     min-height: 100vh;
     line-height: 1.5;
+    font-family: var(--ff-main);
+    background-color: var(--clr-neutral-300);
 }
 
 img,
@@ -37,6 +39,108 @@ picture {
   display: block;
 }
 
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .7rem;
+    color: var(--clr-neutral-400);
+    font-weight: var(--fw-bold);
+}
+
 input {
     font: inherit;
+    display: block;
+    font-weight: var(--fw-bold);
+    width: 100%;
+    border: solid 1px var(--clr-neutral-400);
+    border-radius: .3rem;
+    padding: .3rem .6rem;
+}
+
+input:focus {
+    border: solid 2px;
+}
+
+hr {
+    width: 85%;
+    margin-inline: auto;
+}
+
+.card {
+    background-color: var(--clr-neutral-100);
+    width: 90%;
+    max-width: 450px;
+    margin-inline: auto;
+    margin-top: 5rem;
+    padding-block: 2rem;
+    border-radius: 1rem 1rem 4rem 1rem;
+}
+
+.container {
+    width: 85%;
+    margin-inline: auto;
+}
+
+.arrow {
+    background-color: var(--clr-primary-purple);
+    display: inline-block;
+    padding: .9rem;
+    border-radius: 100%;
+    margin-top: -1.6rem;
+}
+
+.wrapper {
+    text-align: center;
+    width: 85%;
+    margin-inline: auto;
+}
+
+.arrow img {
+    width: 1.5rem;
+}
+
+.result {
+    font-size: var(--fs-result);
+    font-style: italic;
+    font-weight: var(--fw-xbold);
+}
+
+.result p {
+    line-height: 1.1;
+}
+
+.result span {
+    color: var(--clr-primary-purple);
+    margin-right: .5rem;
+}
+
+#errorMessage {
+    color: var(--clr-primary-Lightred);
+    font-style: italic;
+    font-size: .7rem;
+}
+
+
+@media(min-width: 400px) {
+
+    form {
+        margin-bottom: 1.5rem;
+    }
+
+    .container {
+        width: 60%;
+        margin-right: 0;
+        margin-left: 2rem;
+    }
+
+    .wrapper {
+        text-align: right;
+    }
 }
