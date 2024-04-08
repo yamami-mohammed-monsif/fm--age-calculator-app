@@ -76,7 +76,7 @@ hr {
 .card {
     background-color: var(--clr-neutral-100);
     width: 90%;
-    max-width: 450px;
+    max-width: 550px;
     margin-inline: auto;
     margin-top: 5rem;
     padding-block: 2rem;
@@ -118,20 +118,31 @@ hr {
 
 .result span {
     color: var(--clr-primary-purple);
-    margin-right: .5rem;
+    margin-right: .6rem;
 }
 
 #errorMessage {
     color: var(--clr-primary-Lightred);
     font-style: italic;
-    font-size: .7rem;
+    margin-top: .3rem;
+    font-size: .6rem;
 }
 
 
 @media(min-width: 400px) {
 
+    body {
+        display: flex;
+        align-items: center;
+    }
+
     form {
         margin-bottom: 1.5rem;
+    }
+
+    .card {
+        margin-top: 0;
+        padding-block: 3rem;
     }
 
     .container {
