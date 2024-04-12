@@ -15,6 +15,14 @@ var resultYear = document.getElementById('result-year');
 var submitButton = document.getElementById('submitButton');
 
 submitButton.addEventListener('click', () => {
+
+    var dayisValid = validateDay();
+    var monthIsValid = validateMonth();
+    var yearIsValid = validateYear();
+    if(dayisValid && monthIsValid && yearIsValid) {
+        calculateAge();
+    }
+
     if(day.value === '') {
         day.classList.add('error');
         labels[0].classList.add('error');
@@ -31,13 +39,6 @@ submitButton.addEventListener('click', () => {
         year.classList.add('error');
         labels[2].classList.add('error');
         errorMessageYear.textContent = 'This field is required';
-    }
-
-    var dayisValid = validateDay();
-    var monthIsValid = validateMonth();
-    var yearIsValid = validateYear();
-    if(dayisValid && monthIsValid && yearIsValid) {
-        calculateAge();
     }
 })
 
