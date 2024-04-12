@@ -36,12 +36,14 @@ submitButton.addEventListener('click', () => {
     var dayisValid = validateDay();
     var monthIsValid = validateMonth();
     var yearIsValid = validateYear();
+    calculateAge();
 })
 
 
 // validate the day
+var dayInput;
 day.addEventListener('input', validateDay);
-function validateDay(monthInput) {
+function validateDay() {
     if(day.value != '') {
         day.classList.remove('error');
         labels[0].classList.remove('error');
@@ -78,12 +80,14 @@ function validateDay(monthInput) {
         labels[1].classList.remove('error');
         year.classList.remove('error');
         labels[2].classList.remove('error');
+        dayInput = day.value;
         return true;
     }
 }
 
 
 // validate the month
+var monthInput;
 month.addEventListener('input', validateMonth);
 function validateMonth() {
     if(month.value != '') {
@@ -99,11 +103,12 @@ function validateMonth() {
         return false;
     }
     validateDay(month.value);
+    monthInput = month.value;
     return true;
 }
 
 // validate the year
-var resltYearValue;
+var yearInput;
 year.addEventListener('input', validateYear);
 function validateYear() {
     if(year.value != '') {
@@ -118,5 +123,32 @@ function validateYear() {
         errorMessageYear.textContent = 'Must be in the past';
         return false;
     }
+    yearInput = year.value;
     return true;
+}
+
+
+// calculate the age
+function calculateAge() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    differenceInYears = yyyy - yearInput;
+    differenceInMonths = mm - monthInput;
+    differenceInDays = dd - dayInput;
+
+    // in case the person hasn't had their birthday yey.
+    if(differenceInMonths < 0) {
+        differenceInMonths = differenceInMonths + 12;
+        differenceInYears = differenceInYears - 1;
+    }
+    if(differenceInDays < 0) {
+        differenceInDays = differenceInDays + 30;
+    }
+
+    resultDay.innerHTML = differenceInDays;
+    resultMonth.innerHTML = differenceInMonths;
+    resultYear.innerHTML = differenceInYears;
 }
