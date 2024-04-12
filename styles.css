@@ -64,10 +64,6 @@ input {
     padding: .3rem .6rem;
 }
 
-input:focus {
-    border: solid 2px;
-}
-
 hr {
     width: 85%;
     margin-inline: auto;
@@ -96,6 +92,11 @@ hr {
     margin-top: -1.6rem;
 }
 
+.arrow:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
 .wrapper {
     text-align: center;
     width: 85%;
@@ -119,13 +120,20 @@ hr {
 .result span {
     color: var(--clr-primary-purple);
     margin-right: .6rem;
+    letter-spacing: .5rem;
 }
 
-#errorMessage {
+.error-message {
     color: var(--clr-primary-Lightred);
     font-style: italic;
     margin-top: .3rem;
     font-size: .6rem;
+}
+
+/* i added this class to use in js */
+.error {
+    color: var(--clr-primary-Lightred);
+    border-color: var(--clr-primary-Lightred);
 }
 
 

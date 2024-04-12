@@ -24,33 +24,35 @@
         <div>
           <label for="day">day</label>
           <input type="number" id="day" placeholder="DD">
-          <p id="errorMessage"></p>
+          <p class="error-message" id="errorMessageDay"></p>
         </div>
         <div>
           <label for="month">month</label>
           <input type="number" id="month" placeholder="MM">
-          <p id="errorMessage"></p>
+          <p class="error-message" id="errorMessageMonth"></p>
         </div>
         <div>
           <label for="year">year</label>
           <input type="number" id="year" placeholder="YYYY">
-          <p id="errorMessage"></p>
+          <p class="error-message" id="errorMessageYear"></p>
         </div>
       </form>
     </div>
     <hr>
     <div class="wrapper">
       <div class="arrow">
-        <img src="assets/images/icon-arrow.svg" alt="">
+        <img id="submitButton" src="assets/images/icon-arrow.svg" alt="">
       </div>
     </div>
     <div class="container">
       <div class="result">
-        <p><span>--</span>years</p>
-        <p><span>--</span>months</p>
-        <p><span>--</span>days</p>
+        <p><span id="result-year">--</span>years</p>
+        <p><span id="result-month">--</span>months</p>
+        <p><span id="result-day">--</span>days</p>
       </div>
     </div>
   </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
