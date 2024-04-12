@@ -31,3 +31,22 @@ function validateDay(monthInput) {
         return false;
     }
 }
+
+
+// validate the month
+month.addEventListener('input', validateMonth);
+function validateMonth() {
+    if(month.value != '') {
+        month.classList.remove('error');
+        labels[1].classList.remove('error');
+        errorMessageMonth.textContent = '';
+    }
+
+    if(month.value > 12 || month.value < 1) {
+        month.classList.add('error');
+        labels[1].classList.add('error');
+        errorMessageMonth.textContent = 'Must be a valid month';
+        return false;
+    }
+    return true;
+}
