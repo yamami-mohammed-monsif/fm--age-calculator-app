@@ -36,7 +36,9 @@ submitButton.addEventListener('click', () => {
     var dayisValid = validateDay();
     var monthIsValid = validateMonth();
     var yearIsValid = validateYear();
-    calculateAge();
+    if(dayisValid && monthIsValid && yearIsValid) {
+        calculateAge();
+    }
 })
 
 
