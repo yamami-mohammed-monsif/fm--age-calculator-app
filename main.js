@@ -50,3 +50,23 @@ function validateMonth() {
     }
     return true;
 }
+
+
+// validate the year
+var resltYearValue;
+year.addEventListener('input', validateYear);
+function validateYear() {
+    if(year.value != '') {
+        year.classList.remove('error');
+        labels[2].classList.remove('error');
+        errorMessageYear.textContent = '';
+    }
+
+    if(year.value > 2024) {
+        year.classList.add('error');
+        labels[2].classList.add('error');
+        errorMessageYear.textContent = 'Must be in the past';
+        return false;
+    }
+    return true;
+}
